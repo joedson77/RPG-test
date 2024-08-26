@@ -52,6 +52,12 @@
           "type": "description",
           "settings": {
           }
+        },
+        "custom_liquid_aqVQyt": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "icons"
+          }
         }
       },
       "block_order": [
@@ -61,7 +67,8 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "description"
+        "description",
+        "custom_liquid_aqVQyt"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -81,6 +88,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
