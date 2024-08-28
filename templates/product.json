@@ -29,11 +29,6 @@
             "text_style": "body"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -64,7 +59,6 @@
         "title",
         "rating_8mnCe9",
         "text_T87bff",
-        "price",
         "variant_picker",
         "buy_buttons",
         "description",
