@@ -51,7 +51,7 @@
         "custom_liquid_aqVQyt": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "icons"
+            "custom_liquid": "<div class=\"accepted-cards\">\n  <ul class=\"card-badges-list\">\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'visa.png' | asset_url }}\" alt=\"Visa\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'mastercard.png' | asset_url }}\" alt=\"Mastercard\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'amex.png' | asset_url }}\" alt=\"American Express\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'discover.png' | asset_url }}\" alt=\"Discover\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'paypal.png' | asset_url }}\" alt=\"PayPal\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'apple-pay.png' | asset_url }}\" alt=\"Apple Pay\">\n    <\/li>\n  <\/ul>\n<\/div>"
           }
         }
       },
