@@ -9,6 +9,7 @@
 {% endcomment %}
 
 <details-modal class="header__search">
+  {% unless template contains 'product' %}
   <details>
     <summary
       class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
@@ -24,6 +25,7 @@
         </svg>
       </span>
     </summary>
+
     <div
       class="search-modal modal__content gradient"
       role="dialog"
@@ -105,4 +107,12 @@
       </div>
     </div>
   </details>
+{% endunless %} 
 </details-modal>
+{%  if template contains 'product' %}
+  <div class="checkout-clone">
+    <button>
+      Buy Now
+    </button>
+  </div>
+{% endif %}

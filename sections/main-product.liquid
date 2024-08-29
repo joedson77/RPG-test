@@ -110,7 +110,7 @@
                   {%- render 'price',
                     product: product,
                     use_variant: true,
-                    show_badges: true,
+                    show_badges: false,
                     price_class: 'price--large'
                   -%}
                 </div>
@@ -472,7 +472,6 @@
                   show_pickup_availability: true
                 -%}
               {%- when 'rating' -%}
-                {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">
                     {% liquid
                       assign rating_decimal = 0
@@ -491,24 +490,23 @@
                       <span
                         aria-hidden="true"
                         class="rating-star"
-                        style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                        style="--rating: 4.35; --rating-max: 5; --rating-decimal: 0;"
                       ></span>
                     </div>
                     <p class="rating-text caption">
                       <span aria-hidden="true">
-                        {{- product.metafields.reviews.rating.value }} /
-                        {{ product.metafields.reviews.rating.value.scale_max -}}
+                        4.5 /
+                        5
                       </span>
                     </p>
                     <p class="rating-count caption">
-                      <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                      <span class="visually-hidden">
+                      <span aria-hidden="true">267</span>
+                      <span class="text-review">
                         {{- product.metafields.reviews.rating_count }}
-                        {{ 'accessibility.total_reviews' | t -}}
+                        Reviews
                       </span>
                     </p>
                   </div>
-                {%- endif -%}
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"

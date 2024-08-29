@@ -17,6 +17,34 @@
   %}
 {% endcomment %}
 {%- liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+  assign available = target.available | default: false
+  assign money_price = price | money
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+    assign money_price_min = price_min | money_with_currency
+    assign money_price_max = price_max | money_with_currency
+  endif
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+-%}
+
+{%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
@@ -91,10 +119,55 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
-    </label>
+      <div class="container-swatch">
+        <label for="{{ input_id }}">
+          {% if value ==  'Firebee Starter Kit'  %}
+            <div class="title-price">
+              <h3>
+                {{ value -}}
+              </h3>
+              <div class="price__container">
+                <span class="compare-price">{{- product.variants[0].compare_at_price | money | remove: ' ' -}} </span>
+                <span class="price-swatch"> {{- product.variants[0].price | money | remove: ' ' -}} </span>
+              </div>
+            </div>
+            <div class="first-option">
+                <span>
+                  MOST POPULAR KIT
+                </span>
+            </div>
+            <ul class="benefits">
+              <li>Access to 7 signals (and future signal releases)</li>
+              <li>Firebee Headband </li>
+              <li>$19/month membership, first 2 months free</li>
+            </ul>
+            <p class="description-label">
+              The starter kit is the most affordable way to get started with Firebee. 
+              Pay $299 for the Firebee headband and access to the entire Firebee Signal Catalogue for only $19 a month. 
+              <span style="font-weight: bold">Membership can be cancelled anytime. No contracts. Satisfaction guaranteed.</span>
+            </p>
+          {%  endif %}
+          {% if value ==  "Founder's Kit"  %}
+            <div class="title-price">
+              <h3>
+                {{ value -}}
+              </h3>
+              <div class="price__container">
+                <span class="price-swatch"> {{- product.variants[1].price | money | remove: ' ' -}} </span>
+              </div>
+            </div>
+            <ul class="benefits">
+              <li>Access to 7 signals (and future signal releases)</li>
+              <li>Firebee Headband </li>
+              <li>No Monthly Membership</li>
+            </ul>
+            <p class="description-label">
+              The Founders kit allows you to get the Firebee headband and lifetime access to the entire Firebee Signal Catalogue for a one-time payment. 
+              The Founders is kit can be paid through Affirm allowing customers to make small payments of $73 a month.
+            </p>
+          {%  endif %}
+        </label>
+      </div>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
