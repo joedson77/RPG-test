@@ -51,7 +51,7 @@
         "custom_liquid_aqVQyt": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"accepted-cards\">\n  <ul class=\"card-badges-list\">\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'visa.png' | asset_url }}\" alt=\"Visa\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'mastercard.png' | asset_url }}\" alt=\"Mastercard\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'amex.png' | asset_url }}\" alt=\"American Express\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'discover.png' | asset_url }}\" alt=\"Discover\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'paypal.png' | asset_url }}\" alt=\"PayPal\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'apple-pay.png' | asset_url }}\" alt=\"Apple Pay\">\n    <\/li>\n  <\/ul>\n<\/div>"
+            "custom_liquid": "<div class=\"accepted-cards\">\n  <ul class=\"card-badges-list\">\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'visa.svg' | asset_url }}\" width=\"64\" height=\"44\" alt=\"Visa\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'mastercard.png' | asset_url }}\" alt=\"Mastercard\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'amex.png' | asset_url }}\" alt=\"American Express\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'discover.png' | asset_url }}\" alt=\"Discover\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'paypal.png' | asset_url }}\" alt=\"PayPal\">\n    <\/li>\n    <li class=\"card-badge-item\">\n      <img class=\"card-badge-image\" src=\"{{ 'apple-pay.png' | asset_url }}\" alt=\"Apple Pay\">\n    <\/li>\n  <\/ul>\n<\/div>"
           }
         }
       },
@@ -98,10 +98,49 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "image_with_text_r88gqa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WQbpnD": {
+          "type": "heading",
+          "settings": {
+            "heading": "30 Day Money Back Guarantee",
+            "heading_size": "h1"
+          }
+        },
+        "text_ybFkPa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen At Firebee we believe in building quality products that actually work. Firebee and its partners have invested over $85 million in research and development to create the highest quality wearable for customers to enjoy. If for any reason if you are not satisfied with your Firebee headband we will happily refund your purchase. , collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WQbpnD",
+        "text_ybFkPa"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_164.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "image_with_text_r88gqa"
   ]
 }
