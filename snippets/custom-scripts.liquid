@@ -1,6 +1,72 @@
 <!-- custom-scripts -->
 
+<!-- button Buy Now move -->
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const paymentButton = document.querySelector(".shopify-payment-button__button");
+        if (paymentButton) {
+          paymentButton.textContent = "BUY NOW";
+          const arrow = document.createElement("span");
+          arrow.textContent = "➜"; 
+          arrow.style.display = "inline-block";
+          arrow.style.marginLeft = "5px";
+          arrow.style.transition = "transform 0.5s ease-in-out";
+      
+          paymentButton.appendChild(arrow);
+      
+          function animateArrow() {
+            arrow.style.transform = "translateX(20px)";
+            setTimeout(() => {
+              arrow.style.transform = "translateX(-10px)";
+            }, 250);
+            setTimeout(() => {
+              arrow.style.transform = "translateX(0)";
+            }, 500);
+          }
+          setInterval(animateArrow, 2000);
+        }
+      });
+</script>
 
-  
+<!-- Click button top buy now -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkoutCloneButton = document.querySelector(".checkout-clone");
+        const paymentButton = document.querySelector(".shopify-payment-button__button");
+        if (checkoutCloneButton && paymentButton) {
+          checkoutCloneButton.addEventListener("click", function() {
+            paymentButton.click();
+          });
+        }
+      });
+</script>
+
+<!-- show and hide badges -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function checkFirstLiAndToggleBadges() {
+          const ulElement = document.querySelector(".product__media-list.contains-media");
+          const firstLi = ulElement ? ulElement.querySelector("li:first-child") : null;
+          const badgeImgs = document.querySelectorAll(".badge-img");
+      
+          if (firstLi && badgeImgs.length > 0) {
+            badgeImgs.forEach(function(badgeImg) {
+              if (!firstLi.classList.contains("is-active")) {
+                badgeImg.style.display = "none";
+              } else {
+                badgeImg.style.display = ""; 
+              }
+            });
+          }
+        }
+        checkFirstLiAndToggleBadges();
+        const stickyColumn = document.querySelector(".product__column-sticky");
+        if (stickyColumn) {
+          stickyColumn.addEventListener("click", function() {
+            checkFirstLiAndToggleBadges();
+          });
+        }
+      });
+      
 </script>

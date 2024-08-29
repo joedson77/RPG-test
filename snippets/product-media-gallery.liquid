@@ -53,6 +53,9 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
+    <img class="badge-img" src="{{ 'badge_1.png' | asset_url }}" alt="Badge 1" width="112" height="112" style="position: absolute; z-index: 3; top: -66px">
+    <img class="badge-img" src="{{ 'badge_2.png' | asset_url }}" alt="Badge 2" width="112" height="112" style="position: absolute; left: 120px;z-index: 3; top: -66px">
+    
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
@@ -315,4 +318,5 @@
       </button>
     </slider-component>
   {%- endif -%}
+  {% render "uvp-prod" %}
 </media-gallery>
