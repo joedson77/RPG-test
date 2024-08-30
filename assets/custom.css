@@ -277,6 +277,9 @@ body .product-media-container.media-type-image.media-fit-contain.global-media-se
     gap: 10px;
     padding: 0;
 }
+.utility-bar.color-scheme-e2ec427c-cb2c-40a8-a522-d9637a46aeeb.gradient.utility-bar--bottom-border {
+    background: #10475e;
+}
 .image-with-text__media.image-with-text__media--adapt.global-media-settings.background-transparent.media img {
     max-width: 292px;
     max-height: 292px;
