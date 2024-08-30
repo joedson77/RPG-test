@@ -82,9 +82,6 @@ body p.rating-count.caption {
     border-radius: 20px;
     padding: 5px 43px;
 }
-body .container-swatch{
-
-}
 body .product-form__input--pill input[type=radio]:checked + .container-swatch{
     background: linear-gradient(0deg, rgba(159, 77, 160, 1) 0%, rgba(43, 94, 206, 1) 100%);
     border-radius: 15px; 
@@ -278,6 +275,7 @@ body .product-media-container.media-type-image.media-fit-contain.global-media-se
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding: 0;
 }
 .image-with-text__media.image-with-text__media--adapt.global-media-settings.background-transparent.media img {
     max-width: 292px;
@@ -295,12 +293,126 @@ body .product-media-container.media-type-image.media-fit-contain.global-media-se
 .section-template--18307996647673__image_with_text_r88gqa-padding.gradient.color-scheme-1 {
     background-color: #fff;
 }
-@media screen and (max-width: 768px) {
+.uvp-container.mobile{
+    display: none;
+}
+button.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover {
+    background: #0fe974;
+}
+.checkout-clone button:hover {
+    background-color: #09e36e;
+}
+@media(max-width: 768px) {
     body .product--large:not(.product--no-media) .product__media-wrapper, 
     body .product--large:not(.product--no-media) .product__info-wrapper {
         max-width: 100%;
     }
     .page-width.utility-bar__grid{
-        background-image: url('caminho/para/imagem-mobile.jpg');
+        background-image: url( 'top-bg-2.png' );
+        background-size: cover;
+        background-position: center;    
+        background-color: #10475e;
+    }
+    p.announcement-bar__message.h5 {
+        font-size: 22px;
+    }
+    body .header {
+        display: flex;
+        padding: 10px 10px 15px 10px;
+        justify-content: space-between;
+    }
+    body header-drawer {
+        order: 2;
+    }
+    body .header>.header__heading-link {
+        order: 0;
+    }
+    body .header__icons {
+        order: 1;
+    }
+    .checkout-clone {
+        padding-right: 10px;
+    }
+    .checkout-clone button {
+        padding: 13px 23px;
+        font-size: 18px;
+    }
+    img.badge-img {
+        width: 90px;
+        height: 90px;
+        top: -80px
+    }
+    img.badge-img:nth-child(1) {
+        left: 20px;
+    }
+    .uvp-container.desktop{
+        display: none;
+    }
+    h1,p.product__text.inline-richtext {
+        text-align: center;
+    }
+    body .product__info-container>*+* {
+        justify-content: center;
+    }
+    .title-price {
+        flex-direction: column;
+        align-content: flex-start;
+    }
+    .price__container {
+        padding-left: 20px;
+        padding-top: 0;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+    body .container-swatch label h3 {
+        padding: 20px 20px 0 20px;
+    }
+    ul.benefits {
+        padding: 0 10px 0 0;
+    }
+    img.card-badge-image {
+        width: 50px;
+        height: 34px;
+    }
+    ul.card-badges-list {
+        gap: 5px;
+
+    }
+    .shopify-payment-button__button span{
+        right: -20px;
+        position: relative;
+    }
+    button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
+        width: 100%;
+    }
+    .uvp-item {
+        flex-direction: column;
+    }
+    .uvp-title,.uvp-description {
+        text-align: center;
+    }
+    .uvp-title {
+        font-size: 13px;
+    }
+    .uvp-container {
+        gap: 5px;
+        margin: 0 10px;
+    }    
+    .uvp-description {
+        font-size: 12px;
+    }
+    .image-with-text__media.image-with-text__media--adapt.global-media-settings.background-transparent.media img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .image-with-text__media.image-with-text__media--adapt.global-media-settings.background-transparent.media {
+        padding-bottom: 67%!important;
+    }
+    h2.image-with-text__heading.inline-richtext.h1 {
+        text-align: center;
+        font-size: 34px;
+    }
+    div#ImageWithText--template--18307996647673__image_with_text_r88gqa {
+        padding: 0 10px;
     }
 }
